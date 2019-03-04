@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/master.css">
+    <title>Horarios</title>
+  </head>
+  <body class="container-fluid mx-0 px-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-0 p-0">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./img/ic_upiicsa.png" width="45" height="45" alt="">
+        </a>
+      </div>
+    </nav>
+    <article class="row justify-content-center m-0">
+      <form class="col-md-4 my-auto mx-sm-4 text-right" id="frm_login">
+        <p class="h2 text-center">Inicio de sesión</p>
+        <div class="form-group text-left">
+          <label for="input_email">Correo electrónico:</label>
+          <input type="email" class="form-control" id="input_email" name="email" placeholder="Ingrese su correo electrónico">
+        </div>
+        <div class="form-group text-left">
+          <label for="input_password">Contraseña:</label>
+          <input type="password" class="form-control" id="input_password" name="password" placeholder="Ingrese su contraseña">
+        </div>
+        <!--<input type="submit" class="btn btn-primary  my-4" value="Enviar">-->
+        <button class="btn btn-primary my-4" onclick="iniciar_sesion()">Enviar</button>
+        <button class="btn btn-primary my-4" onclick="mostrarForm(false)">Cancelar</button>
+      </form>
+      <section class="col-md-5 jumbotron my-md-5 my-sm-1 py-2">
+          <h1 class="display-5">Sistema de asignación de materias</h1>
+          <p class="lead text-justify">Sistema que permite la asignación de profesores a las materias impartidas cada periodo escolar por la academia de informática de la UPIICSA</p>
+          <hr class="my-4">
+          <div class="text-right">
+            <a class="btn btn-primary btn-lg" id="iniciar_sesion" href="#" role="button" onclick="mostrarForm(true)">Iniciar sesión</a>
+          </div>
+      </section>
+      <section class="col-md-5 mt-md-5 mt-sm-1" id="container_img">
+        <img src="./img/upiicsa.jpg" width="100%">
+      </section>
+    </article>
+    <footer class="row justify-content-center m-0">
+      <div class="col-md-10 text-center">
+        <small>Av. Té #950 esquina Resina, Col. Granjas México, C.P. 08400, Alcaldía. Iztacalco, Ciudad de México, México. Teléfono: 56242000 EXT. 70076.</small>
+        <small>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIA CIENCIAS SOCIALES Y ADMINISTRATIVAS - ALGUNOS DERECHOS RESERVADOS © 2019 - POLÍTICAS DE PRIVACIDAD</small>
+        <p class="text-muted">&copy; Proyecto 2019-2020 </p>
+        <img src="./img/ic_footer.png" alt="" width="65%">
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="./js/index.js" charset="utf-8"></script>
+  </body>
+</html>
