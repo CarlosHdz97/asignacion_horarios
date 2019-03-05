@@ -22,13 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Inicio</a>
+              <a class="nav-link" href="./index.html">Inicio</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Profesores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Horarios</a>
+              <a class="nav-link" href="./horarios.html">Horarios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="cerrar_sesion()">Cerrar sesión</a>
@@ -38,7 +38,7 @@
       </div>
     </nav>
     <article class="row justify-content-center m-0">
-      <aside class="col-md-8 text-center">
+      <aside class="col-md-9 text-center">
         <p class="h2 text-dark">Profesores <button class="btn btn-primary my-4" data-toggle="modal" data-target="#subir_archivo"><i class="fas fa-plus-circle"></i></button></p>
         <form class="col-md-5 ml-auto my-3">
           <!-- Another variation with a button -->
@@ -62,7 +62,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Subir archivo</button>
+                <button type="button" class="btn btn-primary" onclick="subir_archivo()">Subir archivo</button>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -70,7 +70,7 @@
             </div>
           </div>
         </div>
-        <table class=" col-md-12 table table-striped table-responsive">
+        <table class=" col-md-12 table table-striped table-responsive" id="detalles">
           <thead>
             <tr>
               <th scope="col">Reporte</th>
@@ -86,29 +86,236 @@
               <th>HECC970929HMCRNR09</th>
               <th>Carlos Hernández</th>
               <th>CarlosHdz_97@outlook.com</th>
-              <th><button class="btn btn-primary"><i class="fas fa-pen-square"></i></button></th>
-              <th><button class="btn btn-danger"><i class="fas fa-minus-circle"></i></button></th>
+              <th><button class="btn btn-primary" onclick="mostrarForm(true);"><i class="fas fa-pen-square"></i></button></th>
+              <th><button class="btn btn-danger" onclick="delete_item()"><i class="fas fa-minus-circle"></i></button></th>
             </tr>
             <tr>
               <th><button class="btn btn-dark"><i class="fas fa-file-download"></i></button></th>
               <th>MEMG970508MMCRNR09</th>
               <th>Gabriela Mendoza</th>
               <th>gabriela@gmail.com</th>
-              <th><button class="btn btn-primary"><i class="fas fa-pen-square"></i></button></th>
-              <th><button class="btn btn-danger"><i class="fas fa-minus-circle"></i></button></th>
+              <th><button class="btn btn-primary" onclick="mostrarForm(true);"><i class="fas fa-pen-square"></i></button></th>
+              <th><button class="btn btn-danger" onclick="delete_item()"><i class="fas fa-minus-circle"></i></button></th>
             </tr>
             <tr>
               <th><button class="btn btn-dark"><i class="fas fa-file-download"></i></button></th>
               <th>DUMV970105MMCRNR09</th>
               <th>Viridiana Duran</th>
               <th>Viridiana@gmail.com</th>
-              <th><button class="btn btn-primary"><i class="fas fa-pen-square"></i></button></th>
-              <th><button class="btn btn-danger"><i class="fas fa-minus-circle"></i></button></th>
+              <th><button class="btn btn-primary" onclick="mostrarForm(true);"><i class="fas fa-pen-square"></i></button></th>
+              <th><button class="btn btn-danger" onclick="delete_item()"><i class="fas fa-minus-circle"></i></button></th>
             </tr>
           </tbody>
           </table>
       </aside>
     </article>
+    <aside class="row justify-content-center m-0" id="frm_agregar">
+      <form class="col-md-8">
+        <p class="h2 text-primary text-center">Datos generales</p>
+        <div class="form-group">
+          <label for="name">Academía de adscripción:</label>
+          <input type="text" name="academia" class="form-control" id="input_academia" placeholder="Ingrese su academia de adscripción" required autocomplete="off" maxlength="55">
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="name">Apellido paterno:</label>
+              <input type="text" name="apellido_paterno" class="form-control" id="input_apellido_paterno" placeholder="Ingrese su apellido paterno" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="name">Apellido materno:</label>
+              <input type="text" name="apellido_materno" class="form-control" id="input_apellido_materno" placeholder="Ingrese su apellido materno" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="name">Nombre(s):</label>
+              <input type="text" name="nombre" class="form-control" id="input_nombre" placeholder="Ingrese su nombre" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Nivel academico:</label>
+              <input type="text" name="nivel_academico" class="form-control" id="input_nivel_academico" placeholder="Ingrese su nivel academico" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Formación academica:</label>
+              <input type="text" name="formacion_academica" class="form-control" id="input_formacion_academica" placeholder="Ingrese su formación academica" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Horas de nombramiento:</label>
+              <select id="input_horas_nombramiento" name="horas_nombramiento" class="form-control"required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="...">...</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Dictamen de categoria docente:</label>
+              <select id="input_dictamen_categoria_docente" name="dictamen_categoria_docente" class="form-control"required>
+                <option value="1">TITULAR "A"</option>
+                <option value="2">TITULAR "B"</option>
+                <option value="3">TITULAR "C"</option>
+                <option value="4">ASOCIADO "A"</option>
+                <option value="5">ASOCIADO "B"</option>
+                <option value="6">ASOCIADO "C"</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Email:</label>
+              <input type="text" name="email" class="form-control" id="input_email" placeholder="Ingrese su correo electrónico" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Celular:</label>
+              <input type="text" name="celular" class="form-control" id="input_celular" placeholder="Ingrese su número de celular" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p class="h4 text-primary text-center">Disponibilidad de horario proximo semestre</p>
+
+        <hr>
+        <p class="h4 text-primary text-center">Unidades de aprendizaje que puede impartir por orden de prioridades.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Materia 1°:</label>
+              <input type="text" name="materia" class="form-control" id="input_materia" placeholder="Ingrese el nombre de la asignatura" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">¿Ya la ha impartido anteriormente?:</label>
+              <select id="input_impartido" name="impartido" class="form-control"required>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p class="h4 text-primary text-center">Unidades de aprendizaje que puede impartir por orden de prioridades en otras academias.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Materia 1°:</label>
+              <input type="text" name="materia" class="form-control" id="input_materia" placeholder="Ingrese el nombre de la asignatura" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Academia:</label>
+              <input type="text" name="impartoda" class="form-control" id="input_academia" placeholder="Ingrese impartida" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p class="h4 text-primary text-center">En caso de llevar a cabo actividades de superación personal o de apoyo, favor de especificar los siguientes datos (Anexar documento de soporte)</p>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Actividad de superación<!--Personal-->:</label>
+              <input type="text" name="actividad_superacion" class="form-control" id="input_actividad_superacion" placeholder="Ingrese la activad de superación" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Lugar:</label>
+              <input type="text" name="lugar" class="form-control" id="input_lugar" placeholder="Ingrese el lugar" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Días:</label>
+              <input type="text" name="dias" class="form-control" id="input_días" placeholder="Ingrese los días que tomara dicha actividad" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Horarios:</label>
+              <input type="text" name="horarios" class="form-control" id="input_horarios" placeholder="Ingrese los horarios" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Actividad de superación<!--Personal-->:</label>
+              <input type="text" name="actividad_superacion" class="form-control" id="input_actividad_superacion" placeholder="Ingrese la activad de superación" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Lugar:</label>
+              <input type="text" name="lugar" class="form-control" id="input_lugar" placeholder="Ingrese el lugar" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Días:</label>
+              <input type="text" name="dias" class="form-control" id="input_días" placeholder="Ingrese los días que tomara dicha actividad" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Horarios:</label>
+              <input type="text" name="horarios" class="form-control" id="input_horarios" placeholder="Ingrese los horarios" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Actividad de superación<!--Personal-->:</label>
+              <input type="text" name="actividad_superacion" class="form-control" id="input_actividad_superacion" placeholder="Ingrese la activad de superación" required autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Lugar:</label>
+              <input type="text" name="lugar" class="form-control" id="input_lugar" placeholder="Ingrese el lugar" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Días:</label>
+              <input type="text" name="dias" class="form-control" id="input_días" placeholder="Ingrese los días que tomara dicha actividad" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="name">Horarios:</label>
+              <input type="text" name="horarios" class="form-control" id="input_horarios" placeholder="Ingrese los horarios" autocomplete="off" maxlength="55">
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="col-md-10 text-right">
+        <button class="btn btn-primary my-4" onclick="guardar_datos();">Guardar datos</button>
+        <button class="btn btn-secondary my-4" onclick="mostrarForm(false);">Cancelar</button>
+      </div>
+    </aside>
     <footer class="row justify-content-center m-0">
       <div class="col-md-10 text-center">
         <small>Av. Té #950 esquina Resina, Col. Granjas México, C.P. 08400, Alcaldía. Iztacalco, Ciudad de México, México. Teléfono: 56242000 EXT. 70076.</small>
@@ -123,6 +330,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="./js/index.js" charset="utf-8"></script>
+    <script src="./js/profesores.js" charset="utf-8"></script>
   </body>
 </html>

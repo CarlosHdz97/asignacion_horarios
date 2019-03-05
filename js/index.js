@@ -24,15 +24,4 @@ function iniciar_sesion(){
   window.location.href = "./profesores.html";  // sadly this reload
 });
 }
-function cerrar_sesion(){
-  Swal.fire({
-  position: 'center',
-  type: 'success',
-  title: 'Adios!',
-  showConfirmButton: false,
-  timer: 3000
-}).then((result)=>{
-  window.location.href = "./index.html";  // sadly this reload
-});
-}
 init();

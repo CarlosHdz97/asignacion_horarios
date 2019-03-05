@@ -16,29 +16,52 @@
         <a class="navbar-brand" href="#">
           <img src="./img/ic_upiicsa.png" width="45" height="45" alt="">
         </a>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" data-toggle="modal" data-target="#iniciar_sesion" style="cursor:pointer;">Iniciar sesión</a>
+          </li>
+        </ul>
       </div>
     </nav>
     <article class="row justify-content-center m-0">
-      <form class="col-md-4 my-auto mx-sm-4 text-right" id="frm_login">
-        <p class="h2 text-center">Inicio de sesión</p>
-        <div class="form-group text-left">
-          <label for="input_email">Correo electrónico:</label>
-          <input type="email" class="form-control" id="input_email" name="email" placeholder="Ingrese su correo electrónico">
+      <!-- Modal -->
+      <div class="modal fade" id="iniciar_sesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="h2">Inicio de sesión</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-right">
+              <form>
+                <div class="form-group text-left p-md-2">
+                  <label for="input_email">Correo electrónico:</label>
+                  <input type="email" class="form-control" id="input_email" name="email" placeholder="Ingrese su correo electrónico">
+                </div>
+                <div class="form-group text-left p-md-2">
+                  <label for="input_password">Contraseña:</label>
+                  <input type="password" class="form-control" id="input_password" name="password" placeholder="Ingrese su contraseña">
+                </div>
+                <!--<input type="submit" class="btn btn-primary  my-4" value="Enviar">-->
+              </form>
+            </div>
+            <div class="modal-footer text-right">
+              <button class="btn btn-primary my-4" onclick="iniciar_sesion()">Enviar</button>
+              <button class="btn btn-secondary my-4"  data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
         </div>
-        <div class="form-group text-left">
-          <label for="input_password">Contraseña:</label>
-          <input type="password" class="form-control" id="input_password" name="password" placeholder="Ingrese su contraseña">
-        </div>
-        <!--<input type="submit" class="btn btn-primary  my-4" value="Enviar">-->
-        <button class="btn btn-primary my-4" onclick="iniciar_sesion()">Enviar</button>
-        <button class="btn btn-primary my-4" onclick="mostrarForm(false)">Cancelar</button>
-      </form>
+      </div>
       <section class="col-md-5 jumbotron my-md-5 my-sm-1 py-2">
           <h1 class="display-5">Sistema de asignación de materias</h1>
           <p class="lead text-justify">Sistema que permite la asignación de profesores a las materias impartidas cada periodo escolar por la academia de informática de la UPIICSA</p>
           <hr class="my-4">
+          <p class="h3 text-dark">Formatos</p>
           <div class="text-right">
-            <a class="btn btn-primary btn-lg" id="iniciar_sesion" href="#" role="button" onclick="mostrarForm(true)">Iniciar sesión</a>
+            <a class="btn btn-primary m-1" href="./files/form_disponibilidad_profesor.xlsx" download>Disponibilidad del profesor</a>
+            <a class="btn btn-primary m-1" href="./files/form_disponibilidad_profesor.xlsx" download>Disponibilidad de horarios</a>
           </div>
       </section>
       <section class="col-md-5 mt-md-5 mt-sm-1" id="container_img">
@@ -47,8 +70,8 @@
     </article>
     <footer class="row justify-content-center m-0">
       <div class="col-md-10 text-center">
-        <small>Av. Té #950 esquina Resina, Col. Granjas México, C.P. 08400, Alcaldía. Iztacalco, Ciudad de México, México. Teléfono: 56242000 EXT. 70076.</small>
-        <small>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIA CIENCIAS SOCIALES Y ADMINISTRATIVAS - ALGUNOS DERECHOS RESERVADOS © 2019 - POLÍTICAS DE PRIVACIDAD</small>
+        <p class="small">Av. Té #950 esquina Resina, Col. Granjas México, C.P. 08400, Alcaldía. Iztacalco, Ciudad de México, México. Teléfono: 56242000 EXT. 70076.</p>
+        <p class="small">UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIA CIENCIAS SOCIALES Y ADMINISTRATIVAS </p>
         <p class="text-muted">&copy; Proyecto 2019-2020 </p>
         <img src="./img/ic_footer.png" alt="" width="65%">
       </div>
